@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-HOSPITAL WEBSITE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a38bbd5670.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style2.css')}}">
+</head>
+<body style="padding: 30px;">
+    <p class="result">Result :</p>
+    {% if prediction == 1%}
+        <p class="caution-heading">Chances of having Diabetes is more, please consult a Doctor.</p>
+        <div style="text-align: center;">
+            <img src="{{ url_for('static',filename='gif2.gif')}}" class="image-style"/>
+        </div>
+    {% elif prediction == 0%}
+        <p class="para">No Worries!!! You don't have Diabetes.</p>
+        <div style="text-align: center;">
+            <img src="{{ url_for('static',filename='gif1.gif')}}" class="image-style"/>
+        </div>
+        {% endif %}
+    <div class="d-flex flex-row justify-content-between mt-5">
+    <div>
+    <h1 class="heading">Average values of the properties of<br/>patients having Diabetes</h1>
+    <div class="card description text-shadow mt-3">
+        <p>1.Pregnancies: 6</p>
+        <p>2.Glucose Levels: 148</p>
+        <p>3.Bloodpressure Levels: 72</p>
+        <p>4.Skin Thickness: 35</p>
+        <p>5.Insulin Levels: 100</p>
+        <p>6.BMI: 33.6</p>
+        <p>7.Diabetes PF: 0.627</p>
+        <p>8.Age: 50</p>
+    </div>
+    </div>
+
+    <div>
+    <h1 class="heading">Average values of the properties of<br/>patients don't having Diabetes</h1>
+    <div class="card description text-shadow mt-3">
+        <p>1.Pregnancies: 1</p>
+        <p>2.Glucose Levels: 85</p>
+        <p>3.Bloodpressure Levels: 66</p>
+        <p>4.Skin Thickness: 29</p>
+        <p>5.Insulin Levels: 47</p>
+        <p>6.BMI: 26.6</p>
+        <p>7.Diabetes PF: 0.351</p>
+        <p>8.Age: 31</p>
+    </div>
+</div>
+</div>
+</body>
+</html>

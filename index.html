@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-Hospital Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a38bbd5670.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="navbar-heading">Diabetes Predictor</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" id="navItem1" href="#wcusection">
+                        About
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-link" href="#types" id="navItem2">Types</a>
+                    <a class="nav-link" href="#exploresection" id="navItem3">Symptoms</a>
+                    <a class="nav-link" href="#healthyfood" id="navItem4">Prevention</a>
+                    <a class="nav-link" href="#predictyours" id="navItem5">prediction</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <marquee direction="left" scrollamount="8" style="margin-top:100px;" class="navbar-heading2">
+                    This website was created for the prediction of Diabetes as a part of National Level Tech-Fest "Aakriti" of the event "Project-Expo" organised by CSE(AI&ML), JNTUHUCEM.
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <div class="wcu-section pt-5 pb-5" id="wcusection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="wcu-section-heading">About</h1>
+                </div>
+                <div class="col-12">
+                    <div class="wcu-card p-3 mb-3">
+                        <p class="wcu-card-description">
+                            Diabetes is a disease that occurs when your blood glucose, also called blood sugar, 
+                            is too high. Blood glucose is your main source of energy and comes from the food you eat. 
+                            Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be 
+                            used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin 
+                            well. Glucose then stays in your blood and doesn’t reach your cells.
+                            <br/><br/>Over time, having too much glucose in your blood can cause health problems. Although diabetes has no cure, you can take steps to manage your diabetes and stay healthy.
+                            Sometimes people call diabetes “a touch of sugar” or “borderline diabetes.” These terms suggest that someone doesn’t really have diabetes or has a less serious case, 
+                            but every case of diabetes is serious.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wcu-section pt-5 pb-5" id="types">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="wcu-section-heading">Types</h1>
+                </div>
+                <div class="col-12">
+                    <div class="wcu-card p-3 mb-3">
+                        <p class="wcu-card-description">
+                            <span style="font-weight: bold;text-decoration: underline;">Type 1:</span> Type 1 diabetes is an autoimmune disease. The immune system attacks and destroys cells in the pancreas, where insulin is made. It’s unclear what causes this attack.
+                            <br/><br/><span style="font-weight: bold;text-decoration: underline;">Type 2:</span> Type 2 diabetes occurs when your body becomes resistant to insulin, and sugar builds up in your blood. It’s the most common type—about 90% to 95%Trusted Source of people living with diabetes have type 2.
+                            <br/><br/><span style="font-weight: bold;text-decoration: underline;">Type 1.5:</span> Type 1.5 diabetes is also known as latent autoimmune diabetes in adults (LADA). It occurs during adulthood and sets in gradually like type 2 diabetes. LADA is an autoimmune disease that cannot be treated by diet or lifestyle.
+                            <br/><br/><span style="font-weight: bold;text-decoration: underline;">Gestational:</span> Gestational diabetes is high blood sugar during pregnancy. Insulin-blocking hormones produced by the placenta cause this type of diabetes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="explore-menu-section pt-5 pb-5" id="exploresection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">Symptoms</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo4.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Increased Hunger</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo3.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Increased Thirst</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo1.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Weight Loss</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo5.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Blurred Vision</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="healthy-food-section pt-5 pb-5" id="healthyfood">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">Prevention</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo6.gif')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Do Exercises</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo7.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Eat fruits and vegetables</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo8.jpg')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Eat Healthy Fats</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="{{ url_for('static',filename='logo9.jfif')}}" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Quit Smoking</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="predictyours">
+    <form action="/predict " method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">prediction</h1>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <img src="{{ url_for('static',filename='image1.jfif')}}" class="image-size"/>
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                The diabetes effect on baby during pregnancy in the early weeks can be quite harmful.
+                                Diabetes during pregnancy—including type 1, type 2, or gestational diabetes—can negatively affect the health of women and their babies. For women with type 1 or type 2 diabetes, high blood sugar around the time of conception increases babies’ risk of birth defects, stillbirth, and preterm birth.
+                            </p>
+                            <h1 style="color: red;font-weight: bold;font-family: roboto;font-size: 20px;">If you are a male then enter the value 0.</h1>
+                            <input type="text" placeholder="Number of Pregnancies" required="required" class="input-data" name="pregnancies"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                If any adult person is diabetic, their normal blood sugar level must be between 80 to 130 mg/dL. Adults have a different rate of blood sugar levels than kids. If the diabetic patient is above the age of 20 years, the blood sugar level must be between 70 to 180 mg/dL throughout the day. 
+                                Two hours after eating a meal, most adults without diabetes should have a blood sugar level of between 90 milligrams per deciliter (mg/dL) and 140 mg/dL. 
+                            </p>
+                            <input type="text" placeholder="Glucose Levels" required="required" class="input-data" name="glucose"/>
+                        </div>
+                        <img src="{{ url_for('static',filename='image2.jpg')}}" class="image-size"/>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <img src="{{ url_for('static',filename='image3.jpg')}}" class="image-size"/>
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                Hardening and thickening of the arteries due to high blood pressure or other factors can lead to a heart attack, stroke or other complications.
+                                Most people with diabetes will eventually have high blood pressure, along with other heart and circulation problems. Diabetes damages arteries and makes them targets for hardening, called atherosclerosis. That can cause high blood pressure, which if not treated, can lead to trouble including blood vessel damage, heart attack, and kidney failure.
+                            </p>
+                            <input type="text" placeholder="Blood Pressure Levels" required="required" name="bloodpressure" class="input-data"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                Skin thickening is frequently observed in patients with diabetes. Affected areas of skin can appear thickened, waxy, or edematous. These patients are often asymptomatic but can have a reduction in sensation and pain. Although different parts of the body can be involved, the hands and feet are most frequently involved.
+                                This skin problem usually develops in people who have complications due to diabetes or diabetes that is difficult to treat. 
+                            </p>
+                            <input type="text" placeholder="Skin Thickness" required="required" class="input-data" name="skinthickness"/>
+                        </div>
+                        <img src="{{ url_for('static',filename='image4.jfif')}}" class="image-size"/>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <img src="{{ url_for('static',filename='image5.png')}}" class="image-size"/>
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                Natural insulin (i.e. insulin released from your pancreas) keeps your blood sugar in a very narrow range. Overnight and between meals, the normal, non-diabetic blood sugar ranges between 60-100mg/dl and 140 mg/dl or less after meals and snacks. See the picture below of blood sugar levels throughout the day in someone who does not have diabetes.
+                                Insulin is a key player in developing type 2 diabetes. Insulin Isophane is used to improve blood sugar control in adults and children with type 1 and type 2 diabetes mellitus.
+                            </p>
+                            
+                            <input type="text" placeholder="Insulin Levels" required="required" class="input-data" name="insulin"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                Body Mass Index (BMI) is a person’s weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but it does not diagnose the body fatness or health of an individual. 
+                                Body Mass Index (BMI) Body Mass Index (BMI) is a person's weight in kilograms divided by the square of height in meters. A high BMI can be an indicator fatness.
+                            </p>
+                            <input type="text" placeholder="BMI" required="required" class="input-data" name="bmi"/>
+                        </div>
+                        <img src="{{ url_for('static',filename='IMAGE6.png')}}" class="image-size"/>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <img src="{{ url_for('static',filename='IMAGE7.png')}}" class="image-size"/>
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                The best clinical predictor of diabetes is adiposity, and baseline glucose is the best biological predictor. Clinical and biological predictors differed marginally between men and women. The genetic polymorphisms added little to the prediction of diabetes.
+                                The overriding biological factor predictive of diabetes was the baseline glucose level. In the (clinical + biological) equation in men, the GGT also entered the equation and in women the triglycerides concentration entered.
+                            </p>
+                            
+                            <input type="text" placeholder="Diabetes PF" required="required" class="input-data" name="dpf"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex flex-row wcu-card p-3 mb-3 shadow">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="wcu-card-description">
+                                Effects of age and diabetes on scleral stiffness. The interaction between age and diabetes was not significant for all outcomes. This study suggests that the age-related increase in scleral stiffness is accelerated in eyes with diabetes, which may have important implications in glaucoma.
+                                Younger, rather than older, age at diabetes diagnosis was associated with higher risk of mortality and vascular disease.
+                                Almost 25% of Americans 65 and older have been diagnosed with type 2.
+                            </p>
+                            <input type="text" placeholder="Age" required="required" class="input-data" name="age"/>
+                        </div>
+                        <img src="{{ url_for('static',filename='image8.jfif')}}" class="image-size"/>
+                    </div>
+                </div>
+                <div class="col-12 text-center mb-5">
+                    <button type="submit">Predict</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
